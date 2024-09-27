@@ -132,10 +132,12 @@ const ConferenceEvent = () => {
       venueItems.forEach((item) => {
         totalCost += item.cost * item.quantity;
       });
+      return totalCost;
     } else if (section === "av") {
       avItems.forEach((item) => {
         totalCost += item.cost * item.quantity;
       });
+      return totalCost;
     } else if (section === "meals") {
       mealsItems.forEach((item) => {
         if (item.selected) {
@@ -302,7 +304,7 @@ const ConferenceEvent = () => {
                   </div>
                 ))}
               </div>
-              <div className="total_cost">Total Cost: {avTotalCost}</div>
+              <div className="total_cost">Total Cost: ${avTotalCost}</div>
             </div>
             {/* Meal Section */}
             <div id="meals" className="venue_container container_main">
@@ -346,7 +348,7 @@ const ConferenceEvent = () => {
                   </div>
                 ))}
               </div>
-              <div className="total_cost">Total Cost: {mealsTotalCost}</div>
+              <div className="total_cost">Total Cost: ${mealsTotalCost}</div>
             </div>
           </div>
         ) : (
